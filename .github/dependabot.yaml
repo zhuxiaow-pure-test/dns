@@ -1,0 +1,34 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: /images/dnsmasq
+  schedule:
+    interval: weekly
+- package-ecosystem: docker
+  directory: /third_party/forked/skydns
+  schedule:
+    interval: weekly
+- package-ecosystem: docker
+  directory: /vendor/github.com/nxadm/tail
+  schedule:
+    interval: weekly
+- package-ecosystem: docker
+  directory: /vendor/golang.org/x/net/http2
+  schedule:
+    interval: weekly
+- package-ecosystem: docker
+  directory: /
+  schedule:
+    interval: weekly
+- package-ecosystem: docker
+  directory: /test/e2e/sidecar
+  schedule:
+    interval: weekly
+- package-ecosystem: gomod
+  directory: /
+  schedule:
+    interval: weekly
+  groups:
+    gomod-dependencies:
+      patterns:
+      - '*'
